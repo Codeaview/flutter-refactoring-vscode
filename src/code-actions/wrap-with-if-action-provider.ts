@@ -21,11 +21,11 @@ export class WrapWithIfCodeActionProvider implements CodeActionProvider {
             },
             {
                 command: "wrapWithIf.wrapWithIfWithoutBraces",
-                title: "Wrap with If without braces",
+                title: "Wrap with If (no braces)",
             },
             {
                 command: "wrapWithIf.wrapWithIfAndArray",
-                title: "Wrap Widget with If and array",
+                title: "Wrap with If (Spread)",
             },
         ].map((c) => {
             let action = new CodeAction(c.title, CodeActionKind.Refactor);

@@ -29,8 +29,3 @@ export function activate(_context: ExtensionContext) {
     ),
   );
 }
-
-
-export function deactivate() {
-  // Cleanup if needed
-}
