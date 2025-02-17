@@ -9,7 +9,20 @@ export const getSelectedText = (editor: TextEditor): Selection => {
     editor.document.positionAt(0)
   );
   const language = editor.document.languageId;
-  if (language != "dart") return emptySelection;
+
+  // Early exit if not a Dart file
+  if (language !== "dart") {
+    return emptySelection;
+  }
+
+  // 1) If the user has already selected text (can be multi-line),
+  //    use that selection directly.
+  if (!editor.selection.isEmpty) {
+    return editor.selection;
+  }
+
+  // 2) Otherwise, if there is no selection, fall back to
+  //    the original "find a widget" logic:
 
   const line = editor.document.lineAt(editor.selection.start);
   const lineText = line.text;
@@ -28,7 +41,7 @@ export const getSelectedText = (editor: TextEditor): Selection => {
       currentChar === openBracket ||
       (currentChar === " " &&
         lineText.charAt(widgetStartIndex - 1) !== "," &&
-        lineText.substring(widgetStartIndex - 5, widgetStartIndex) != "const");
+        lineText.substring(widgetStartIndex - 5, widgetStartIndex) !== "const");
     if (isBeginningOfWidget) break;
   }
   widgetStartIndex++;
