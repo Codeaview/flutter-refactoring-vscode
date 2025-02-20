@@ -27,6 +27,10 @@ export class WrapWithIfCodeActionProvider implements CodeActionProvider {
                 command: "wrapWithIf.wrapWithIfAndArray",
                 title: "Wrap with If (Spread)",
             },
+            {
+                command: "wrapWithIf.wrapWithTernary",
+                title: "Wrap with Ternary",
+            },
         ].map((c) => {
             let action = new CodeAction(c.title, CodeActionKind.Refactor);
             action.command = {
