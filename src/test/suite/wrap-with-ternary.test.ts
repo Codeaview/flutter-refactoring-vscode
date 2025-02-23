@@ -47,10 +47,10 @@ suite("Wrap with Ternary Tests", () => {
         test("Single widget (no comma) -> ternary with placeholder for false widget", () => {
             const input = `Text('Single')`;
             const output = ternarySnippet(input);
-            // Expect: ${1:condition} ? Text('Single') : ${2:widget}
+            // Expect: ${1:condition} ? Text('Single') : ${2:null}
             assert.strictEqual(
                 output,
-                `\${1:condition} ? Text('Single') : \${2:widget}`
+                `\${1:condition} ? Text('Single') : \${2:null}`
             );
         });
 

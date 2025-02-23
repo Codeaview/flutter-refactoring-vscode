@@ -65,7 +65,7 @@ export const ternarySnippet = (selectedText: string) => {
     }
 
     // Only one widget (or no top-level comma found)
-    return `\${1:condition} ? ${selectedText} : \${2:widget}`;
+    return `\${1:condition} ? ${selectedText} : \${2:null}`;
 };
 
 /**

@@ -1,71 +1,114 @@
-# wrap-with-if README
+# Flutter Refactoring Extension
 
-This is the README for your extension "wrap-with-if". After writing up a brief description, we recommend including the following sections.
+A Visual Studio Code extension that provides additional refactoring actions for Dart and Flutter projects, enabling you to quickly wrap widgets with if statements, if (no braces), if spread operators, or convert Widgets into a ternary (?:) structure.
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+- Wrap with If: Insert an if (condition) { ... } around selected code.
+- Wrap with If (no braces): Insert if (condition) ... (without curly braces) around selected code.
+- Wrap with If (Spread): Insert if (condition) ...[ ... ] around selected code, useful for Flutter's spread operator in lists.
+- Wrap with Ternary: Convert one or two widgets into a condition ? firstWidget : secondWidget expression.
 
-For example if there is an image subfolder under your extension project workspace:
+## Examples
 
-\!\[feature X\]\(images/feature-x.png\)
+### Ternary Refactoring
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+Original selection
 
-## Requirements
+```dart
+Text('Hello'), Text('World')
+```
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+After "Wrap with Ternary"
 
-## Extension Settings
+```dart
+condition ? Text('Hello') : Text('World')
+```
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+### If Refactoring
 
-For example:
+Original selection
 
-This extension contributes the following settings:
+```dart
+Container()
+```
 
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
+After "Wrap with If (Spread)"
+
+```dart
+if (condition) ...[
+  Container()
+]
+```
+
+## Installation
+
+Marketplace: Search for “Flutter Refactoring Extension” in the Visual Studio Code Marketplace and click Install.
+
+## Usage
+
+### Command Palette
+
+1. Open a Dart file in VS Code.
+2. Select the widget(s) you want to wrap.
+3. Press Ctrl+Shift+P (Windows/Linux) or Cmd+Shift+P (macOS) to open the Command Palette.
+4. Type "Wrap with If", "Wrap with Ternary", or any of the listed commands below.
+5. Press Enter to apply the refactoring.
+
+### Refactoring Menu (Right-Click)
+
+1. In a Dart file, highlight the widget(s) you want to wrap.
+2. Right-click in the editor to open the context menu.
+3. Choose "Wrap with If" (or another relevant command) from the Refactoring menu.
+
+## Available Commands
+
+| Command                     | Description                                                                 |
+|------------------------------|-----------------------------------------------------------------------------|
+| Wrap with If                | Wraps the selected widget(s) with if (condition) { ... }                  |
+| Wrap with If (no braces)    | Wraps the selected widget(s) with if (condition) ....                     |
+| Wrap with If (Spread)       | Wraps with if (condition) ...[ ... ] around selected code, useful for lists of Widgets. If you select code and apply this refactor, the whole selection will be wrapped. |
+| Wrap with Ternary           | Wraps selected widget(s) in a condition ? firstWidget : secondWidget expression. If only one widget is selected, then it will be the firstWidget and secondWidget will be . |
 
 ## Known Issues
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+- The code actions are triggered only when opening/editing a Dart file. Opening a non-Dart file before opening a Dart file may not activate the extension.
+- After using "Wrap with If" or "Wrap with Ternary", you might need to manually format your code if you disabled the editor.action.formatDocument or have a specific formatter that doesn’t auto-run.
 
-## Release Notes
+## Contributions
 
-Users appreciate release notes as you update your extension.
+Contributions are welcome! Here’s how you can help:
 
-### 1.0.0
+1. Fork the repository and clone it locally.
+2. Create a new branch for your feature/bugfix:
 
-Initial release of ...
+    ```bash
+    git checkout -b my-feature
+    ```
 
-### 1.0.1
+3. Install dependencies:
 
-Fixed issue #.
+    ```bash
+    npm install
+    ```
 
-### 1.1.0
+4. Make your changes, then build and test:
 
-Added features X, Y, and Z.
+    ```bash
+    npm run compile
+    npm test
+    ```
 
----
+5. Commit and push your changes to your fork.
+6. Open a Pull Request on GitHub.
 
-## Following extension guidelines
+## License
 
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
+MIT License © 2025 Dominik Czerwoniuk
 
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
+This extension is open-source and free for personal or commercial usage. See the LICENSE file for details.
 
-## Working with Markdown
+Enjoy using the Flutter Refactoring Extension! If you have any questions, issues, or feature requests, please feel free to open an issue or reach out on Github.
 
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+Disclaimer:
+This extension is provided "as is" without any warranty. Use at your own risk.
