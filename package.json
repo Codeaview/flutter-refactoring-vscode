@@ -1,13 +1,18 @@
 {
-  "name": "wrap-with-if",
-  "displayName": "Wrap with if",
-  "description": "Extension to wrap selected code with if (condition).",
+  "name": "flutter-refactoring-ext",
+  "displayName": "Flutter Refactoring Extension",
+  "description": "Extension for additional refactoring actions. Allows to easily wrap widgets with If, If without braces, If and array (and Spread operator), Ternary operator.",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.97.0"
   },
   "categories": [
-    "Other"
+    "Snippets",
+    "Programming Languages"
+  ],
+  "keywords": [
+    "dart",
+    "flutter"
   ],
   "activationEvents": [
     "onLanguage:dart"
@@ -16,16 +21,39 @@
   "contributes": {
     "commands": [
       {
-        "command": "wrapWithIf.wrapSelection",
-        "title": "Wrap with If Condition"
+        "command": "flutterRefactoringExt.wrapWithIf",
+        "title": "Wrap with If"
+      },
+      {
+        "command": "flutterRefactoringExt.wrapWithIfWithoutBraces",
+        "title": "Wrap with If (no braces)"
+      },
+      {
+        "command": "flutterRefactoringExt.wrapWithIfAndArray",
+        "title": "Wrap with If (Spread)"
+      },
+      {
+        "command": "flutterRefactoringExt.wrapWithTernary",
+        "title": "Wrap with Ternary"
       }
     ],
     "menus": {
-      "editor/context": [
+      "commandPalette": [
         {
-          "command": "wrapWithIf.wrapSelection",
-          "when": "editorTextFocus && editorHasSelection",
-          "group": "navigation"
+          "command": "flutterRefactoringExt.wrapWithIf",
+          "when": "editorLangId == dart"
+        },
+        {
+          "command": "flutterRefactoringExt.wrapWithIfWithoutBraces",
+          "when": "editorLangId == dart"
+        },
+        {
+          "command": "flutterRefactoringExt.wrapWithIfAndArray",
+          "when": "editorLangId == dart"
+        },
+        {
+          "command": "flutterRefactoringExt.wrapWithTernary",
+          "when": "editorLangId == dart"
         }
       ]
     }

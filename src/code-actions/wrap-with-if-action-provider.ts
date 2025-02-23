@@ -2,10 +2,8 @@ import { window, CodeAction, CodeActionProvider, CodeActionKind } from "vscode";
 import { getSelectedText } from "../utils";
 
 export class WrapWithIfCodeActionProvider implements CodeActionProvider {
-    // Indicate we’re returning a “refactor” type CodeAction
     public static readonly providedCodeActionKinds = [CodeActionKind.Refactor];
 
-    // Return a list of actions to be performed
     public provideCodeActions(): CodeAction[] {
 
         const editor = window.activeTextEditor;
@@ -16,19 +14,19 @@ export class WrapWithIfCodeActionProvider implements CodeActionProvider {
 
         return [
             {
-                command: "wrapWithIf.wrapWithIf",
+                command: "flutterRefactoringExt.wrapWithIf",
                 title: "Wrap with If",
             },
             {
-                command: "wrapWithIf.wrapWithIfWithoutBraces",
+                command: "flutterRefactoringExt.wrapWithIfWithoutBraces",
                 title: "Wrap with If (no braces)",
             },
             {
-                command: "wrapWithIf.wrapWithIfAndArray",
+                command: "flutterRefactoringExt.wrapWithIfAndArray",
                 title: "Wrap with If (Spread)",
             },
             {
-                command: "wrapWithIf.wrapWithTernary",
+                command: "flutterRefactoringExt.wrapWithTernary",
                 title: "Wrap with Ternary",
             },
         ].map((c) => {

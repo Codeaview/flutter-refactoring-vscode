@@ -12,18 +12,19 @@ export function activate(_context: ExtensionContext) {
 
 	_context.subscriptions.push(
 		commands.registerCommand(
-			"wrapWithIf.wrapWithIf",
+			"flutterRefactoringExt.wrapWithIf",
 			wrapWithIf,
 		),
 		commands.registerCommand(
-			"wrapWithIf.wrapWithIfWithoutBraces",
+			"flutterRefactoringExt.wrapWithIfWithoutBraces",
 			wrapWithIfNoBraces,
 		),
 		commands.registerCommand(
-			"wrapWithIf.wrapWithIfAndArray",
+			"flutterRefactoringExt.wrapWithIfAndArray",
 			wrapWithIfAndArray,
 		),
-		commands.registerCommand("wrapWithIf.wrapWithTernary",
+		commands.registerCommand(
+			"flutterRefactoringExt.wrapWithTernary",
 			wrapWithTernary,
 		),
 
