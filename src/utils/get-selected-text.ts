@@ -42,7 +42,9 @@ export const getSelectedText = (editor: TextEditor): Selection => {
       (currentChar === " " &&
         lineText.charAt(widgetStartIndex - 1) !== "," &&
         lineText.substring(widgetStartIndex - 5, widgetStartIndex) !== "const");
-    if (isBeginningOfWidget) break;
+    if (isBeginningOfWidget) {
+      break;
+    }
   }
   widgetStartIndex++;
 
@@ -53,8 +55,8 @@ export const getSelectedText = (editor: TextEditor): Selection => {
       commaIndex >= 0
         ? commaIndex
         : bracketIndex >= 0
-        ? bracketIndex
-        : lineText.length;
+          ? bracketIndex
+          : lineText.length;
 
     return new Selection(
       new Position(line.lineNumber, widgetStartIndex),
@@ -68,8 +70,8 @@ export const getSelectedText = (editor: TextEditor): Selection => {
     let c = l === line.lineNumber ? openBracketIndex + 1 : 0;
     for (c; c < currentLine.text.length; c++) {
       const currentChar = currentLine.text.charAt(c);
-      if (currentChar === openBracket) bracketCount++;
-      if (currentChar === closeBracket) bracketCount--;
+      if (currentChar === openBracket) { bracketCount++; }
+      if (currentChar === closeBracket) { bracketCount--; }
       if (bracketCount === 0) {
         return new Selection(
           new Position(line.lineNumber, widgetStartIndex),
