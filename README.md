@@ -1,6 +1,15 @@
 # Flutter Refactoring Extension
 
-A Visual Studio Code extension that provides additional refactoring actions for Dart and Flutter projects, enabling you to quickly wrap widgets with if statements, if (no braces), if spread operators, or convert Widgets into a ternary (?:) structure.
+A Visual Studio Code extension that provides additional refactoring actions for Flutter projects.
+
+![Icon](/assets/icon.png)
+
+Enables you to quickly wrap widgets with:
+
+- if statements
+- if (no braces)
+- if with spread operator (if ...[widgets])
+- convert Widgets into a ternary (?:) structure.
 
 ## Features
 

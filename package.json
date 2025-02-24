@@ -14,6 +14,7 @@
     "dart",
     "flutter"
   ],
+  "icon": "assets/icon.png",
   "activationEvents": [
     "onLanguage:dart"
   ],
