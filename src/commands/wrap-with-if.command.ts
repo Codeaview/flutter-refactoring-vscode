@@ -3,17 +3,17 @@ import { wrapWith } from "../utils";
 /**
  * A snippet function that inserts a placeholder for the condition.
  */
-const ifSnippet = (widget: string) => {
+export const ifSnippet = (widget: string) => {
   return `if (\${1:condition}) {
   ${widget}
 }`;
 };
 
-const ifSnippetWithoutBraces = (widget: string) => {
+export const ifSnippetWithoutBraces = (widget: string) => {
   return `if (\${1:condition})${widget}`;
 };
 
-const ifAndArraySnippet = (widget: string) => {
+export const ifAndArraySnippet = (widget: string) => {
   return `if (\${1:condition}) ...[
   ${widget}
 ]`;
