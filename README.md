@@ -4,13 +4,6 @@ A Visual Studio Code extension that provides additional refactoring actions for 
 
 ![Icon](/assets/icon.png)
 
-Enables you to quickly wrap widgets with:
-
-- if statements
-- if (no braces)
-- if with spread operator (if ...[widgets])
-- convert Widgets into a ternary (?:) structure.
-
 ## Features
 
 - Wrap with If: Insert an if (condition) { ... } around selected code.
@@ -18,9 +11,14 @@ Enables you to quickly wrap widgets with:
 - Wrap with If (Spread): Insert if (condition) ...[ ... ] around selected code, useful for Flutter's spread operator in lists.
 - Wrap with Ternary: Convert one or two widgets into a condition ? firstWidget : secondWidget expression.
 
+> **Tip** You can select the code and execute the refactoring action (from refactoring menu or command palette]) to wrap the whole block of code at once.
+
 ## Examples
 
 ### Ternary Refactoring
+
+![Wrap with Ternary Gif Example](/assets/wrap_with_ternary_example.gif)
+Wrapping two Widgets with Ternary Operator
 
 Original selection
 
@@ -67,7 +65,7 @@ Marketplace: Search for “Flutter Refactoring Extension” in the Visual Studio
 ### Refactoring Menu (Right-Click)
 
 1. In a Dart file, highlight the widget(s) you want to wrap.
-2. Right-click in the editor to open the context menu.
+2. Right-click in the editor to open the context menu (or use keyboard shortcut).
 3. Choose "Wrap with If" (or another relevant command) from the Refactoring menu.
 
 ## Available Commands
@@ -79,7 +77,7 @@ Marketplace: Search for “Flutter Refactoring Extension” in the Visual Studio
 | Wrap with If (Spread)       | Wraps with if (condition) ...[ ... ] around selected code, useful for lists of Widgets. If you select code and apply this refactor, the whole selection will be wrapped. |
 | Wrap with Ternary           | Wraps selected widget(s) in a condition ? firstWidget : secondWidget expression. If only one widget is selected, then it will be the firstWidget and secondWidget will be . |
 
-## Known Issues
+## Known Issues and limitations
 
 - The code actions are triggered only when opening/editing a Dart file. Opening a non-Dart file before opening a Dart file may not activate the extension.
 - After using "Wrap with If" or "Wrap with Ternary", you might need to manually format your code if you disabled the editor.action.formatDocument or have a specific formatter that doesn’t auto-run.
