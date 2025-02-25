@@ -2,7 +2,7 @@
   "name": "flutter-refactoring-ext",
   "displayName": "Flutter Refactoring Extension",
   "description": "Easily wrap Widgets with If, If without braces, If using Spread Operator, Ternary Operator.",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "engines": {
     "vscode": "^1.97.0"
   },
