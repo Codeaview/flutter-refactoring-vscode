@@ -2,7 +2,7 @@
 
 A Visual Studio Code extension that provides additional refactoring actions for Flutter projects.
 
-![Icon](/assets/icon.png)
+![Icon](https://github.com/Codeaview/flutter-refactoring-vscode/blob/develop/assets/icon.png?raw=true)
 
 ## Features
 
@@ -17,7 +17,7 @@ A Visual Studio Code extension that provides additional refactoring actions for 
 
 ### Ternary Refactoring
 
-![Wrap with Ternary Gif Example](/assets/wrap_with_ternary_example.gif)
+![Wrap with Ternary Gif Example](https://github.com/Codeaview/flutter-refactoring-vscode/blob/develop/assets/wrap_with_ternary_example.gif?raw=true)
 Wrapping two Widgets with Ternary Operator
 
 Original selection
